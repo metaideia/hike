@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'Desqer <dev@desqer.com>'
+  default from: 'Metaideia <oi@metaideia.com.br>'
 
   layout 'mailer'
 end
