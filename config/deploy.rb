@@ -4,11 +4,11 @@ require 'mina/rbenv'
 require 'mina/puma'
 
 set :application_name, 'hike'
-set :domain, 'hike.desqer.com'
-set :user, 'desqer'
+set :domain, 'hike.metaideia.com.br'
+set :user, 'deploy'
 set :forward_agent, true
-set :deploy_to, '/home/desqer/apps/hike'
-set :repository, 'git@github.com:desqer/hike.git'
+set :deploy_to, '/home/deploy/apps/hike'
+set :repository, 'git@github.com:metaideia/hike.git'
 set :branch, 'master'
 
 set :shared_files, fetch(:shared_files, []).push(
