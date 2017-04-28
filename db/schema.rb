@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170127073701) do
+ActiveRecord::Schema.define(version: 20170428183942) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20170127073701) do
     t.string   "email_from"
     t.string   "email_subject"
     t.text     "email_template"
+    t.string   "name_from"
   end
 
   create_table "subscriptions", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
