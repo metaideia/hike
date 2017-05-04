@@ -7,6 +7,7 @@ ActiveAdmin.register Subscription do
   scope :canceled
 
   filter :list
+  filter :lead_email_contains, label: "Email Contains"
   filter :created_at
 
   index do
