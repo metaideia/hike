@@ -15,7 +15,15 @@ ActiveAdmin.register Subscription do
     column(:lead)
     column(:created_at)
 
-    actions
+    actions do |subscription|
+      link_to "Resend", resend_admin_subscription_path(subscription), method: :put
+    end
+  end
+
+  member_action :resend, method: :put do
+    SubscriptionMailer.send(resource)
+
+    redirect_to collection_path, notice: "Success sending to #{resource.lead_email}"
   end
 
   form do |f|

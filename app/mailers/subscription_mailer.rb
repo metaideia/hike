@@ -1,5 +1,5 @@
 class SubscriptionMailer < ApplicationMailer
-  def message(subscription, redirect_url)
+  def message(subscription, redirect_url = nil)
     {
       from_name: subscription.list_name_from,
       from_email: subscription.list_email_from,
