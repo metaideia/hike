@@ -1,5 +1,5 @@
 class SubscriptionMailer < ApplicationMailer
-  def confirmation_email(subscription, redirect_url)
+  def confirmation_email(subscription, redirect_url = nil)
     mail to: subscription.lead_email,
          from: subscription.list_name_email_from,
          subject: subscription.list_email_subject,

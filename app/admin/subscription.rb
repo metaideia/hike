@@ -22,7 +22,7 @@ ActiveAdmin.register Subscription do
   end
 
   member_action :resend, method: :put do
-    SubscriptionMailer.confirmation_email(subscription, confirm_redirect_url).deliver_later
+    SubscriptionMailer.confirmation_email(resource).deliver_later
 
     redirect_to collection_path, notice: "Success sending to #{resource.lead_email}"
   end
