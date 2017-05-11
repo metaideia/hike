@@ -12,6 +12,10 @@ class List < ApplicationRecord
     attachment.file.present?
   end
 
+  def name_email_from
+    "#{name_from} <#{email_from}>"
+  end
+
   def to_s
     name
   end

@@ -10,8 +10,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'liquid', '~> 4.0'
-
-gem 'mandrill-api', '~> 1.0', require: 'mandrill'
+gem 'sparkpost_rails', '~> 1.4'
 
 gem 'devise'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
