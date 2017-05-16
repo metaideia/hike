@@ -20,6 +20,9 @@ class API::PaymentsController < APIController
       if response.errors.none?
         redirect_to response.url
       else
+        logger.info params.inspect
+        logger.error "Pagseguro: #{response.errors.join(", ")}"
+
         redirect_to params[:redirect_error_url]
       end
     else
