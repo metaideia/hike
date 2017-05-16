@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :subscriptions, only: [:create]
+    resources :payments, only: [:create]
+    resources :payment_notifications, only: [:create]
 
     get '/subscription_confirmations/:id', to: 'subscription_confirmations#create', as: :subscription_confirmation
   end
