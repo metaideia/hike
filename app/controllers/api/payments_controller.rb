@@ -7,7 +7,7 @@ class API::PaymentsController < APIController
 
       payment.reference = order.id
       payment.notification_url = api_payment_notifications_url
-      payment.redirect_url = params[:redirect_success_url]
+      payment.redirect_url = params[:data][:redirect_success_url]
       payment.items << {
         id: "mindcolors",
         description: "Coleção Mindcolors - 5 quadros 30x40cm",
@@ -23,10 +23,10 @@ class API::PaymentsController < APIController
         logger.info params.inspect
         logger.error "Pagseguro: #{response.errors.join(", ")}"
 
-        redirect_to params[:redirect_error_url]
+        redirect_to params[:data][:redirect_error_url]
       end
     else
-      redirect_to params[:redirect_error_url]
+      redirect_to params[:data][:redirect_error_url]
     end
   end
 
