@@ -6,7 +6,7 @@ class API::PaymentsController < APIController
       payment = PagSeguro::PaymentRequest.new
 
       payment.reference = order.id
-      payment.notification_url = payment_notifications_url
+      payment.notification_url = api_payment_notifications_url
       payment.redirect_url = params[:redirect_success_url]
       payment.items << {
         id: "mindcolors",
